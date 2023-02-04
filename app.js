@@ -66,7 +66,9 @@ io.on('connection', (socket) => {
                 enemy.players[data[1]].y = servercodes[count][1];
             }
         }
+        if (enemy.players[data[1]]) {
         enemy.players[data[1]].name = data[2];
+        }
     });
     socket.on('playermove', data => {
         switch (data[0]) {
