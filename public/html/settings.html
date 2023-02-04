@@ -1,0 +1,27 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Settings</title>
+    <style>
+        html,
+        body {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="canvas"></canvas>
+    <p style="font-size: 30px;">Settings</p>
+    <button id="o" style ="position: fixed; top: 0; left: 0;">Back to Menu</button>
+    <label for="colors">Game colors:</label>
+    <input type="text" id="colors" name="colors">
+    <script>
+        document.getElementById('o').onclick = function() {
+            localStorage.roomColors = document.getElementById('colors').value;
+            location.href = "/";
+        };
+        document.getElementById('colors').value = localStorage.roomColors;
+    </script>
+</body>
+</html>

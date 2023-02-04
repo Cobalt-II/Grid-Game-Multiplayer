@@ -1,0 +1,46 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Grid Game</title>
+    <style>
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="canvas"></canvas>
+    <p style="font-size: 30px">Grid Game (shitty menu ik but idc about menu design)</p>
+    <button id = "f">play survival</button>
+    <button id = "l">settings</button>
+    <label for="name">Player name:</label>
+    <input type="text" id="name" name="name" maxlength="24">
+    <label for="code">Spawn code:</label>
+    <input type="text" id="code" name="code" maxlength="24">
+  <script>
+localStorage.spawnCode = null;
+
+document.getElementById('f').onclick = function() {
+    location.href = "/html/game.html";
+    localStorage.name = document.getElementById('name').value;
+    localStorage.spawnCode = document.getElementById('code').value;
+};
+
+document.getElementById('l').onclick = function() {
+    location.href = '/html/settings.html';
+    localStorage.name = document.getElementById('name').value;
+};
+
+if (!localStorage.roomColors) {
+localStorage.roomColors = ['#B25A27', '#B8430F', '#00b0e1', '#32CD32', '#FEF352', '#000000', '#01796f', '#FF0000'];
+localStorage.name = "";
+};
+
+document.getElementById('name').value = localStorage.name;
+  </script>
+  </body>
+</html>
