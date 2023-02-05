@@ -61,7 +61,7 @@ io.on('connection', (socket) => {
     });
     socket.on('code', data => {
         for (let count in servercodes) {
-            if (servercodes[count][3] === data[0]) {
+            if (servercodes[count][3] === data[0] && enemy.players[data[1]]) {
                 enemy.players[data[1]].x = servercodes[count][0];
                 enemy.players[data[1]].y = servercodes[count][1];
             }
